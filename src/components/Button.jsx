@@ -2,7 +2,7 @@ import React from "react";
 import "./Buttons.css";
 
 export default (props) => {
-  let classes = "btn";
+  let classes = "btn "; /**why without space I have an conflit here at "btn " */
   classes += props.operation ? "operation" : "";
   classes += props.double ? "double" : "";
   classes += props.triple ? "triple" : "";
