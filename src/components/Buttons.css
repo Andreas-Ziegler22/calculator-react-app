@@ -11,3 +11,7 @@
   border-bottom: var(--border-button);
   outline: none;
 }
+
+.btn:active {
+  background-color: #ccc;
+}
