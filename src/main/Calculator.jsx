@@ -28,7 +28,24 @@ export default class Calculator extends Component {
   }
 
   addDigit(n) {
-    console.log(n);
+    //making sure that will be only one dot displayed
+    if (n === "." && this.state.displayValue.includes(".")) {
+      return;
+    }
+    const clearDisplay =
+      this.state.displayValue === "0" || this.state.clearDisplay; //clear if value is 0 or true
+    const currentValue = clearDisplay ? "" : this.state.displayValue;
+    const displayValue = currentValue + n;
+    this.setState({ displayValue, clearDisplay: false });
+
+    if (n !== ".") {
+      const idx = this.state.current;
+      const newValue = parseFloat(displayValue);
+      const values = [...this.state.values];
+      values[idx] = newValue;
+      this.setState({ values });
+      console.log(values);
+    }
   }
 
   render() {
