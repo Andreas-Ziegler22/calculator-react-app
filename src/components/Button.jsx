@@ -1,8 +1,8 @@
 import React from "react";
 import "./Buttons.css";
-
+// interesting thing here! usually we should be careful with space on strings on the case here we have to have space because we are concatenate classes together
 export default (props) => {
-  let classes = "btn "; /**why without space I have an conflit here at "btn " */
+  let classes = "btn "; /**<----- interesting thing*/
   classes += props.operation ? "operation" : "";
   classes += props.double ? "double" : "";
   classes += props.triple ? "triple" : "";
